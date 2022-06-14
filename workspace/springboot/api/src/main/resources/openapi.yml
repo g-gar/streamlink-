@@ -1,0 +1,17 @@
+openapi: 3.0.0
+
+info: 
+  title: "asdf"
+  version: 0.0.1
+
+paths:
+  /stream/healthcheck:
+    get:
+      operationId: getStreamHealthCheck
+      responses:
+        '200':
+          description: Checks if stream is available
+          content:
+            application/json:
+              schema:
+                type: boolean

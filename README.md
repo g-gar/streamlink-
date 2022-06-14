@@ -1,2 +1,2 @@
-# streamlink-
+# streamlink+
 streamlink with superpowers

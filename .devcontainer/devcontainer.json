@@ -1,0 +1,24 @@
+{
+	"name": "Java 17",
+	"dockerComposeFile": [
+		"docker-compose.yml"
+	],
+	"service": "devcontainer",
+	"workspaceFolder": "/workspace",
+	"settings": {},
+	"extensions": [
+		"eridem.vscode-postman",
+		"vscjava.vscode-java-pack",
+		"ms-azuretools.vscode-docker",
+		"vscjava.vscode-java-debug",
+		"GabrielBB.vscode-lombok",
+		"vscjava.vscode-maven",
+		"vscjava.vscode-java-dependency",
+		"42Crunch.vscode-openapi",
+		"vscjava.vscode-spring-boot-dashboard"
+	],
+	"forwardPorts": [8080, 8081, 1433],
+	"remoteUser": "vscode",
+	"postCreateCommand": "",
+	"shutdownAction": "none"
+}

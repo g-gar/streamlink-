@@ -1,0 +1,4 @@
+.devcontainer/.volumes
+.env
+**/.vscode
+**/target

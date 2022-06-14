@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    username: SA
+    password: Your_password123
+    url: jdbc:sqlserver://localhost:1433
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+api:
+  basePath: http://localhost:3000

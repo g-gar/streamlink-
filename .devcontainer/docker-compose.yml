@@ -1,0 +1,39 @@
+version: '3.9'
+
+networks:
+  br0:
+    driver: bridge
+
+services:
+  devcontainer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VARIANT: "17"
+        INSTALL_MAVEN: "true"
+        MAVEN_VERSION: "3.8.6"
+        INSTALL_GRADDLE: "false"
+    user: vscode
+    networks:
+      - br0
+    volumes:
+      - ../workspace:/workspace:cached
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: /bin/sh -c "while sleep 1000; do :; done"
+
+  db0:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    hostname: db0
+    container_name: db0
+    user: '1000'
+    networks:
+      - br0
+    ports:
+      - 1433:1433
+    volumes:
+      - .volumes/db0/data:/var/opt/mssql/data
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: $SA_PASSWORD
+      MSSQL_PID: Developer
