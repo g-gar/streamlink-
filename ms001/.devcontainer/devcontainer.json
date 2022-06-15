@@ -1,10 +1,10 @@
 {
 	"name": "Java 17",
 	"dockerComposeFile": [
-		"docker-compose.yml"
+		"../../docker-compose.yml"
 	],
-	"service": "devcontainer",
-	"workspaceFolder": "/workspace",
+	"service": "ms001",
+	"workspaceFolder": "/workspace/",
 	"settings": {},
 	"extensions": [
 		"eridem.vscode-postman",

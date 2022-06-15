@@ -1,0 +1,17 @@
+{
+	"name": "python 3.10",
+	"dockerComposeFile": [
+		"../../docker-compose.yml"
+	],
+	"service": "ms002",
+	"workspaceFolder": "/workspace/",
+	"settings": {},
+	"extensions": [
+		"ms-python.python",
+		"ms-python.vscode-pylance"
+	],
+	"forwardPorts": [8082],
+	"remoteUser": "vscode",
+	"postCreateCommand": "",
+	"shutdownAction": "none"
+}

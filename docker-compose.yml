@@ -5,9 +5,11 @@ networks:
     driver: bridge
 
 services:
-  devcontainer:
+  ms001:
+    hostname: ms001
+    container_name: ms001
     build:
-      context: .
+      context: .\ms001\.devcontainer\
       dockerfile: Dockerfile
       args:
         VARIANT: "17"
@@ -18,7 +20,23 @@ services:
     networks:
       - br0
     volumes:
-      - ../workspace:/workspace:cached
+      - ./ms001/workspace:/workspace:cached
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: /bin/sh -c "while sleep 1000; do :; done"
+
+  ms002:
+    hostname: ms002
+    container_name: ms002
+    build:
+      context: .\ms002\.devcontainer\
+      dockerfile: Dockerfile
+      args:
+        VARIANT: "3.10"
+    user: vscode
+    networks:
+      - br0
+    volumes:
+      - ./ms002/workspace:/workspace:cached
       - /var/run/docker.sock:/var/run/docker.sock
     command: /bin/sh -c "while sleep 1000; do :; done"
 
@@ -32,7 +50,7 @@ services:
     ports:
       - 1433:1433
     volumes:
-      - .volumes/db0/data:/var/opt/mssql/data
+      - ./.volumes/db0/data:/var/opt/mssql/data
     environment:
       ACCEPT_EULA: Y
       SA_PASSWORD: $SA_PASSWORD
