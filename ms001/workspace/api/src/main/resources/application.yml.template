@@ -1,7 +1,7 @@
 spring:
   datasource:
-    username: SA
-    password: Your_password123
+    username: 
+    password: 
     url: jdbc:sqlserver://localhost:1433
     driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
 api:
