@@ -1,4 +1,5 @@
-.devcontainer/.volumes
+**/.volumes
 .env
 **/.vscode
 **/target
+**/application.yml
