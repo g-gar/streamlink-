@@ -2,7 +2,5 @@ spring:
   datasource:
     username: 
     password: 
-    url: jdbc:sqlserver://localhost:1433
+    url: jdbc:sqlserver://db0:1433
     driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-api:
-  basePath: http://localhost:3000
